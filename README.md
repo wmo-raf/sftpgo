@@ -1,4 +1,4 @@
-# git remote add origin https://github.com/wmo-raf/sftpgo.git
+# SFTPGo Installation Guide
 
 SFTPGo is a lightweight, production-ready SFTP/FTP server that makes secure file sharing effortless.
 
