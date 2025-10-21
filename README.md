@@ -51,7 +51,7 @@ cp .env.sample .env
 
 Update the variables as required
 
-**Important:** Replace `your_secure_password_here` with a strong password. Use a combination of:
+**Important:** Set `DB_PASSWORD` with a strong password. Use a combination of:
 - Uppercase letters (A-Z)
 - Lowercase letters (a-z)
 - Numbers (0-9)
