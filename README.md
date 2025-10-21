@@ -77,19 +77,7 @@ docker network ls
 
 ---
 
-## Step 4: Set Directory Permissions
-
-Set proper permissions for the data directories:
-
-```bash
-chmod 755 data/sftpgodata
-chmod 755 data/sftpgohome
-chmod 755 pg_data
-```
-
----
-
-## Step 5: Start the Services
+## Step 4: Start the Services
 
 Navigate to your project directory and start all services:
 
@@ -110,7 +98,7 @@ Wait until you see messages indicating both services are running. Press `Ctrl+C`
 
 ---
 
-## Step 6: Verify Installation
+## Step 5: Verify Installation
 
 Check if both containers are running:
 
@@ -134,7 +122,7 @@ docker compose logs sftpgo-db
 
 ---
 
-## Step 7: Access SFTPGo Web Interface
+## Step 6: Access SFTPGo Web Interface
 
 Open your web browser and go to:
 
@@ -152,7 +140,7 @@ Replace `your-server-ip` with your server's actual IP address.
 
 ---
 
-## Step 8: Create Administrator User
+## Step 7: Create Administrator User
 
 1. Log in with default credentials (admin/password)
 2. Go to "Admins" section
