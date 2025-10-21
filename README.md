@@ -37,6 +37,26 @@ git clone https://github.com/wmo-raf/sftpgo.git
 cd sftpgo
 ```
 
+Create subdirectories for data persistence:
+
+```bash
+mkdir -p data/sftpgodata
+mkdir -p data/sftpgohome
+mkdir -p pg_data
+```
+
+Your directory structure should look like this:
+
+```
+sftpgo/
+├── data/
+│   ├── sftpgodata/
+│   └── sftpgohome/
+├── pg_data/
+├── docker-compose.yml
+└── .env
+```
+
 ---
 
 ## Step 2: Create the .env Configuration File
@@ -49,7 +69,11 @@ You can copy from the sample file
 cp .env.sample .env
 ```
 
-Update the variables as required
+Update the variables as required:
+
+```bash
+nano .env
+```
 
 **Important:** Set `DB_PASSWORD` with a strong password. Use a combination of:
 - Uppercase letters (A-Z)
@@ -77,7 +101,19 @@ docker network ls
 
 ---
 
-## Step 4: Start the Services
+## Step 4: Set Directory Permissions
+
+Set proper permissions for the data directories:
+
+```bash
+chmod 755 data/sftpgodata
+chmod 755 data/sftpgohome
+chmod 755 pg_data
+```
+
+---
+
+## Step 5: Start the Services
 
 Navigate to your project directory and start all services:
 
@@ -98,7 +134,7 @@ Wait until you see messages indicating both services are running. Press `Ctrl+C`
 
 ---
 
-## Step 5: Verify Installation
+## Step 6: Verify Installation
 
 Check if both containers are running:
 
@@ -122,7 +158,7 @@ docker compose logs sftpgo-db
 
 ---
 
-## Step 6: Access SFTPGo Web Interface
+## Step 7: Access SFTPGo Web Interface
 
 Open your web browser and go to:
 
@@ -140,7 +176,7 @@ Replace `your-server-ip` with your server's actual IP address.
 
 ---
 
-## Step 7: Create Administrator User
+## Step 8: Create Administrator User
 
 1. Log in with default credentials (admin/password)
 2. Go to "Admins" section
