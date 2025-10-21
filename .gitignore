@@ -1,0 +1,77 @@
+# Environment variables and secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.cert
+
+# Docker volumes and data
+data/
+pg_data/
+volumes/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups
+*.backup
+*.sql
+*.tar.gz
+*.zip
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# IDE and editor files
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+.editorconfig
+.prettierrc
+
+# Logs
+logs/
+*.log
+docker-compose.log
+
+# System files
+.vagrant/
+*.pem
+.ssh/
+
+# Node modules (if using any build tools)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Build artifacts
+dist/
+build/
+*.o
+*.a
+*.so
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# IDE specific
+.vscode/settings.json
+.vscode/launch.json

@@ -1,0 +1,50 @@
+services:
+  sftpgo-db:
+    image: postgres:15
+    container_name: sftpgo_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - ./pg_data:/var/lib/postgresql/data
+
+  sftpgo:
+    image: drakkan/sftpgo:latest
+    container_name: sftpgo
+    user: '1002'
+    ports:
+      - "8080:8080"
+      - "2022:2022"
+      - "2121:2121"
+      - "50000-50100:50000-50100"
+    volumes:
+      - ./data/sftpgodata:/srv/sftpgo
+      - ./data/sftpgohome:/var/lib/sftpgo
+    environment:
+      SFTPGO_HTTPD__BINDINGS__0__PORT: 8080
+      SFTPGO_HTTPD__BINDINGS__0__ADDRESS: 0.0.0.0
+      SFTPGO_DATA_PROVIDER__CREATE_DEFAULT_ADMIN: false
+      SFTPGO_DATA_PROVIDER__DRIVER: "postgresql"
+      SFTPGO_DATA_PROVIDER__NAME: ${DB_NAME}
+      SFTPGO_DATA_PROVIDER__USERNAME: ${DB_USER}
+      SFTPGO_DATA_PROVIDER__PASSWORD: ${DB_PASSWORD}
+      SFTPGO_DATA_PROVIDER__HOST: "sftpgo-db"
+      SFTPGO_FTPD__BINDINGS__0__ADDRESS: 0.0.0.0
+      SFTPGO_FTPD__BINDINGS__0__PORT: 2121
+      SFTPGO_FTPD__PASSIVE_PORTS: "50000:50100"
+      SFTPGO_FTPD__DEBUG: false
+      SFTPGO_COMMON_DEFENDER__ENABLED: true
+      SFTPGO_COMMON_DEFENDER__BAN_TIME: 15
+      SFTPGO_COMMON_DEFENDER__BAN_TIME_INCREMENT: 100
+      SFTPGO_COMMON_DEFENDER__THRESHOLD: 5
+      SFTPGO_COMMON_DEFENDER__OBSERVATION_TIME: 15
+    restart: unless-stopped
+    depends_on:
+      - sftpgo-db
+
+networks:
+  default:
+    external: true
+    name: ${NETWORK_NAME}
