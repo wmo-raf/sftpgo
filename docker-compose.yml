@@ -13,7 +13,7 @@ services:
   sftpgo:
     image: drakkan/sftpgo:latest
     container_name: sftpgo
-    user: '1002'
+    user: ${SFTPGO_UID:-1000}:${SFTPGO_GID:-1000}
     ports:
       - "8080:8080"
       - "2022:2022"
