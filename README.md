@@ -89,7 +89,7 @@ Save the file (in nano: press `Ctrl+O`, then `Enter`, then `Ctrl+X`).
 
 ---
 
-## Step 4: Create the Docker Network (First Time Only)
+## Step 3: Create the Docker Network (First Time Only)
 
 The configuration uses an external network. Create it with this command (use the NETWORK_NAME from your .env file):
 
@@ -111,7 +111,7 @@ docker network ls
 
 ---
 
-## Step 5: Set Directory Permissions
+## Step 4: Set Directory Permissions
 
 Set proper permissions for the data directories:
 
@@ -123,7 +123,7 @@ chmod 755 pg_data
 
 ---
 
-## Step 6: Start the Services
+## Step 5: Start the Services
 
 Navigate to your project directory and start all services:
 
@@ -144,7 +144,7 @@ Wait until you see messages indicating both services are running. Press `Ctrl+C`
 
 ---
 
-## Step 7: Verify Installation
+## Step 6: Verify Installation
 
 Check if both containers are running:
 
@@ -168,7 +168,7 @@ docker compose logs sftpgo-db
 
 ---
 
-## Step 8: Access SFTPGo Web Interface
+## Step 7: Access SFTPGo Web Interface
 
 Open your web browser and go to:
 
@@ -186,7 +186,7 @@ Replace `your-server-ip` with your server's actual IP address.
 
 ---
 
-## Step 9: Create Administrator User
+## Step 8: Create Administrator User
 
 1. Log in with default credentials (admin/password)
 2. Go to "Admins" section
