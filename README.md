@@ -22,7 +22,7 @@ Before you begin, ensure you have the following installed on your system:
 
 ```bash
 docker --version
-docker-compose --version
+docker compose --version
 ```
 
 If not installed, follow the [official Docker installation guide](https://docs.docker.com/get-docker/).
@@ -129,7 +129,7 @@ Navigate to your project directory and start all services:
 
 ```bash
 cd sftpgo
-docker-compose up -d
+docker compose up -d
 ```
 
 The `-d` flag runs containers in detached mode (background).
@@ -137,7 +137,7 @@ The `-d` flag runs containers in detached mode (background).
 Monitor the startup process:
 
 ```bash
-docker-compose logs -f
+docker compose logs -f
 ```
 
 Wait until you see messages indicating both services are running. Press `Ctrl+C` to exit the logs.
@@ -149,7 +149,7 @@ Wait until you see messages indicating both services are running. Press `Ctrl+C`
 Check if both containers are running:
 
 ```bash
-docker-compose ps
+docker compose ps
 ```
 
 Expected output:
@@ -162,8 +162,8 @@ xxxxx          postgres:15              Up 2 minutes
 Check the logs for any errors:
 
 ```bash
-docker-compose logs sftpgo
-docker-compose logs sftpgo-db
+docker compose logs sftpgo
+docker compose logs sftpgo-db
 ```
 
 ---
@@ -217,23 +217,23 @@ Ensure these ports are:
 
 ### Stop all services:
 ```bash
-docker-compose down
+docker compose down
 ```
 
 ### Start services again:
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 ### Restart services:
 ```bash
-docker-compose restart
+docker compose restart
 ```
 
 ### View logs:
 ```bash
-docker-compose logs -f sftpgo
-docker-compose logs -f sftpgo-db
+docker compose logs -f sftpgo
+docker compose logs -f sftpgo-db
 ```
 
 ---
@@ -269,8 +269,8 @@ sudo chown -R 1002:1002 data/sftpgohome
 Recreate the network using the name from your .env file (NETWORK_NAME):
 ```bash
 docker network create sftpgo_network
-docker-compose down
-docker-compose up -d
+docker compose down
+docker compose up -d
 ```
 
 ---
@@ -284,8 +284,8 @@ docker-compose up -d
 5. **Enable defender** (already enabled in this config)
 6. **Keep Docker images updated**:
    ```bash
-   docker-compose pull
-   docker-compose up -d
+   docker compose pull
+   docker compose up -d
    ```
 7. **Monitor logs regularly** for suspicious activity
 8. **Use HTTPS** with proper SSL certificates for web interface
@@ -297,8 +297,8 @@ docker-compose up -d
 ### Update containers weekly:
 
 ```bash
-docker-compose pull
-docker-compose up -d
+docker compose pull
+docker compose up -d
 ```
 
 ### Clean up unused Docker resources:
