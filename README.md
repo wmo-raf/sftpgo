@@ -29,12 +29,11 @@ If not installed, follow the [official Docker installation guide](https://docs.d
 
 ---
 
-## Step 1: Create Project Directory Structure
-
-Create a folder where all SFTPGo files will be stored:
+## Step 1: Clone the repository to your server
 
 ```bash
-mkdir -p sftpgo
+git clone https://github.com/wmo-raf/sftpgo.git
+
 cd sftpgo
 ```
 
