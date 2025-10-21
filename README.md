@@ -37,26 +37,6 @@ git clone https://github.com/wmo-raf/sftpgo.git
 cd sftpgo
 ```
 
-Create subdirectories for data persistence:
-
-```bash
-mkdir -p data/sftpgodata
-mkdir -p data/sftpgohome
-mkdir -p pg_data
-```
-
-Your directory structure should look like this:
-
-```
-sftpgo/
-├── data/
-│   ├── sftpgodata/
-│   └── sftpgohome/
-├── pg_data/
-├── docker-compose.yml
-└── .env
-```
-
 ---
 
 ## Step 2: Create the .env Configuration File
@@ -69,14 +49,7 @@ You can copy from the sample file
 cp .env.sample .env
 ```
 
-Update the following variables:
-
-```
-DB_USER=sftpgo
-DB_NAME=sftpgo
-DB_PASSWORD=your_secure_password_here
-NETWORK_NAME=sftpgo_network
-```
+Update the variables as required
 
 **Important:** Replace `your_secure_password_here` with a strong password. Use a combination of:
 - Uppercase letters (A-Z)
@@ -93,13 +66,7 @@ Save the file (in nano: press `Ctrl+O`, then `Enter`, then `Ctrl+X`).
 The configuration uses an external network. Create it with this command (use the NETWORK_NAME from your .env file):
 
 ```bash
-docker network create sftpgo_network
-```
-
-Or if you changed `NETWORK_NAME` in your .env file, replace it accordingly:
-
-```bash
-docker network create your_custom_network_name
+docker network create <your_net>
 ```
 
 To verify the network was created:
