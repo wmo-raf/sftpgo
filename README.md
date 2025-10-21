@@ -1,4 +1,4 @@
-# SFTPGo Installation Guide
+# git remote add origin https://github.com/wmo-raf/sftpgo.git
 
 SFTPGo is a lightweight, production-ready SFTP/FTP server that makes secure file sharing effortless.
 
@@ -84,11 +84,6 @@ NETWORK_NAME=sftpgo_network
 - Lowercase letters (a-z)
 - Numbers (0-9)
 - Special characters (!@#$%^&*)
-
-Example of a strong password:
-```
-DB_PASSWORD=SecurePass#2025!SouthSudan
-```
 
 Save the file (in nano: press `Ctrl+O`, then `Enter`, then `Ctrl+X`).
 
