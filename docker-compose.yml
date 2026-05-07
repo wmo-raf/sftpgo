@@ -17,7 +17,7 @@ services:
     ports:
       - "8080:8080"
       - "2022:2022"
-      - "2121:2121"
+      - "21:21"
       - "50000-50100:50000-50100"
     volumes:
       - ./data/sftpgodata:/srv/sftpgo
@@ -32,7 +32,7 @@ services:
       SFTPGO_DATA_PROVIDER__PASSWORD: ${DB_PASSWORD}
       SFTPGO_DATA_PROVIDER__HOST: "sftpgo-db"
       SFTPGO_FTPD__BINDINGS__0__ADDRESS: 0.0.0.0
-      SFTPGO_FTPD__BINDINGS__0__PORT: 2121
+      SFTPGO_FTPD__BINDINGS__0__PORT: 21
       SFTPGO_FTPD__PASSIVE_PORTS: "50000:50100"
       SFTPGO_FTPD__FORCE_PASSIVE_IP: "${SERVER_PUBLIC_IP:-}"
       SFTPGO_FTPD__DEBUG: false
